@@ -1,1 +1,5 @@
-<h1>WEBVIEW</h1>
+<script>
+  import Webview from "$lib/CSAFWebview/Webview.svelte";
+</script>
+
+<Webview></Webview>
