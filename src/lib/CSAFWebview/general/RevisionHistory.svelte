@@ -12,7 +12,7 @@
   import { appStore } from "$lib/store";
 </script>
 
-{#if $appStore.doc?.isRevisionHistoryPresent}
+{#if $appStore.webview.doc?.isRevisionHistoryPresent}
   <div class="revisionhistory">
     <table class="striped">
       <thead>
@@ -24,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        {#each $appStore.doc?.revisionHistory as entry}
+        {#each $appStore.webview.doc?.revisionHistory as entry}
           <tr>
             <td>{entry.date}</td><td>{entry.number}</td><td>{entry.summary}</td><td
               >{#if entry.legacyVersion}{entry.legacyVersion}{/if}</td

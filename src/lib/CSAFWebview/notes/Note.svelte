@@ -9,7 +9,7 @@
 -->
 
 <script lang="ts">
-  import KeyValue from "../../KeyValue.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
   import type { Note } from "$lib/CSAFWebview/docmodel/docmodeltypes";
   import { marked } from "marked";
   import DOMPurify from "dompurify";

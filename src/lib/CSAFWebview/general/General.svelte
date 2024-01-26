@@ -11,27 +11,27 @@
   import { appStore } from "$lib/store";
   import { Status, TLP } from "$lib/CSAFWebview/docmodel/docmodeltypes";
   import Acknowledgments from "$lib/CSAFWebview/acknowledgments/Acknowledgments.svelte";
-  import Collapsible from "$lib/Collapsible.svelte";
+  import Collapsible from "$lib/CSAFWebview/Collapsible.svelte";
   import Notes from "$lib/CSAFWebview/notes/Notes.svelte";
   import References from "$lib/CSAFWebview/references/References.svelte";
   import RevisionHistory from "./RevisionHistory.svelte";
-  import ValueList from "../../ValueList.svelte";
+  import ValueList from "$lib/CSAFWebview/ValueList.svelte";
   let tlpStyle = "";
-  $: aliases = $appStore.doc?.aliases;
-  $: trackingVersion = $appStore.doc?.trackingVersion;
-  $: generator = $appStore.doc?.generator;
-  $: publisherName = $appStore.doc?.publisher.name;
-  $: publisherCategory = $appStore.doc?.publisher.category;
-  $: publisherNamespace = $appStore.doc?.publisher.namespace;
-  $: publisherIssuingAuthority = $appStore.doc?.publisher.issuing_authority;
-  $: publisherContactDetails = $appStore.doc?.publisher.contact_details;
-  $: category = $appStore.doc?.category;
-  $: title = $appStore.doc?.title;
-  $: lang = $appStore.doc?.lang;
-  $: sourceLang = $appStore.doc?.sourceLang;
-  $: csafVersion = $appStore.doc?.csafVersion;
-  $: tlp = $appStore.doc?.tlp;
-  $: tlpurl = $appStore.doc?.tlp.url;
+  $: aliases = $appStore.webview.doc?.aliases;
+  $: trackingVersion = $appStore.webview.doc?.trackingVersion;
+  $: generator = $appStore.webview.doc?.generator;
+  $: publisherName = $appStore.webview.doc?.publisher.name;
+  $: publisherCategory = $appStore.webview.doc?.publisher.category;
+  $: publisherNamespace = $appStore.webview.doc?.publisher.namespace;
+  $: publisherIssuingAuthority = $appStore.webview.doc?.publisher.issuing_authority;
+  $: publisherContactDetails = $appStore.webview.doc?.publisher.contact_details;
+  $: category = $appStore.webview.doc?.category;
+  $: title = $appStore.webview.doc?.title;
+  $: lang = $appStore.webview.doc?.lang;
+  $: sourceLang = $appStore.webview.doc?.sourceLang;
+  $: csafVersion = $appStore.webview.doc?.csafVersion;
+  $: tlp = $appStore.webview.doc?.tlp;
+  $: tlpurl = $appStore.webview.doc?.tlp.url;
   $: if (tlp?.label === TLP.WHITE) {
     tlpStyle = "tlpclear";
   } else if (tlp?.label === TLP.RED) {
@@ -41,18 +41,18 @@
   } else if (tlp?.label === TLP.GREEN) {
     tlpStyle = "tlgreen";
   }
-  $: id = $appStore.doc?.id;
-  $: published = $appStore.doc?.published;
-  $: lastUpdate = $appStore.doc?.lastUpdate;
-  $: status = $appStore.doc?.status;
+  $: id = $appStore.webview.doc?.id;
+  $: published = $appStore.webview.doc?.published;
+  $: lastUpdate = $appStore.webview.doc?.lastUpdate;
+  $: status = $appStore.webview.doc?.status;
   $: if (
-    !$appStore.doc?.isRevisionHistoryPresent &&
-    !$appStore.doc?.isDocPresent &&
-    !$appStore.doc?.isProductTreePresent &&
-    !$appStore.doc?.isPublisherPresent &&
-    !$appStore.doc?.isTLPPresent &&
-    !$appStore.doc?.isTrackingPresent &&
-    !$appStore.doc?.isVulnerabilitiesPresent
+    !$appStore.webview.doc?.isRevisionHistoryPresent &&
+    !$appStore.webview.doc?.isDocPresent &&
+    !$appStore.webview.doc?.isProductTreePresent &&
+    !$appStore.webview.doc?.isPublisherPresent &&
+    !$appStore.webview.doc?.isTLPPresent &&
+    !$appStore.webview.doc?.isTrackingPresent &&
+    !$appStore.webview.doc?.isVulnerabilitiesPresent
   ) {
     appStore.setSingleErrorMsg("Are you sure the URL refers to a CSAF document?");
   }
@@ -68,15 +68,15 @@
       <td class="key">CSAF-Version</td>
       <td class="value">{csafVersion}</td>
     </tr>
-    {#if $appStore.doc?.aggregateSeverity}
+    {#if $appStore.webview.doc?.aggregateSeverity}
       <tr>
         <td class="key">Aggregate severity text</td>
-        <td class="value"><span>{$appStore.doc?.aggregateSeverity.text}</span></td>
+        <td class="value"><span>{$appStore.webview.doc?.aggregateSeverity.text}</span></td>
       </tr>
-      {#if $appStore.doc?.aggregateSeverity.namespace}
+      {#if $appStore.webview.doc?.aggregateSeverity.namespace}
         <tr>
           <td class="key">Aggregate severity namespace</td>
-          <td class="value"><span>{$appStore.doc?.aggregateSeverity.namespace}</span></td>
+          <td class="value"><span>{$appStore.webview.doc?.aggregateSeverity.namespace}</span></td>
         </tr>
       {/if}
     {/if}
@@ -148,7 +148,7 @@
       <td class="key">Tracking Version</td>
       <td class="value">{trackingVersion}</td>
     </tr>
-    {#if $appStore.doc?.status !== Status.final}
+    {#if $appStore.webview.doc?.status !== Status.final}
       <tr>
         <td class="key">Status</td>
         <td class="value">{status}</td>
@@ -157,13 +157,13 @@
     {#if generator}
       <tr>
         <td class="key">Generator engine</td>
-        <td class="value"><span>{$appStore.doc?.generator?.engine.name}</span></td>
+        <td class="value"><span>{$appStore.webview.doc?.generator?.engine.name}</span></td>
       </tr>
     {/if}
     {#if generator?.engine?.version}
       <tr>
         <td class="key">Generator engine version</td>
-        <td class="value"><span>{$appStore.doc?.generator?.engine.version}</span></td>
+        <td class="value"><span>{$appStore.webview.doc?.generator?.engine.version}</span></td>
       </tr>
     {/if}
     {#if generator?.date}
@@ -179,34 +179,38 @@
   <ValueList label="Aliases" values={aliases} />
 {/if}
 
-{#if $appStore.doc?.isRevisionHistoryPresent}
+{#if $appStore.webview.doc?.isRevisionHistoryPresent}
   <div class="subsection">
-    <Collapsible header="Revision history" level="3" open={$appStore.ui.isRevisionHistoryVisible}>
+    <Collapsible
+      header="Revision history"
+      level="3"
+      open={$appStore.webview.ui.isRevisionHistoryVisible}
+    >
       <RevisionHistory />
     </Collapsible>
   </div>
 {/if}
 
-{#if $appStore.doc?.notes}
+{#if $appStore.webview.doc?.notes}
   <div class="subsection">
     <Collapsible header="Notes" level="3">
-      <Notes notes={$appStore.doc?.notes} />
+      <Notes notes={$appStore.webview.doc?.notes} />
     </Collapsible>
   </div>
 {/if}
 
-{#if $appStore.doc?.acknowledgements}
+{#if $appStore.webview.doc?.acknowledgements}
   <div class="subsection">
     <Collapsible header="Acknowledgements" level="3">
-      <Acknowledgments acknowledgments={$appStore.doc?.acknowledgements} />
+      <Acknowledgments acknowledgements={$appStore.webview.doc?.acknowledgements} />
     </Collapsible>
   </div>
 {/if}
 
-{#if $appStore.doc && $appStore.doc.references.length > 0}
+{#if $appStore.webview.doc && $appStore.webview.doc.references.length > 0}
   <div class="subsection">
     <Collapsible header="References" level="3">
-      <References references={$appStore.doc?.references} />
+      <References references={$appStore.webview.doc?.references} />
     </Collapsible>
   </div>
 {/if}

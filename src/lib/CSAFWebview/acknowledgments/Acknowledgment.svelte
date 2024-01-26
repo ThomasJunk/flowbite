@@ -9,8 +9,8 @@
 -->
 
 <script lang="ts">
-  import KeyValue from "$lib/KeyValue.svelte";
-  import ValueList from "$lib/ValueList.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
+  import ValueList from "$lib/CSAFWebview/ValueList.svelte";
   import type { Acknowledgement } from "../docmodel/docmodeltypes";
   export let ack: Acknowledgement;
   const keys: Array<String> = [];
