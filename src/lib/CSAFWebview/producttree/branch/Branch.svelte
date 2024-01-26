@@ -10,7 +10,7 @@
 
 <script lang="ts">
   import BranchComponent from "./Branch.svelte";
-  import Product from "$lib/singleview/producttree/product/Product.svelte";
+  import Product from "$lib/CSAFWebview/producttree/product/Product.svelte";
   import type { Branch } from "$lib/types";
 
   export let branch: Branch;

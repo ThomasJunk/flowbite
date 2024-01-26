@@ -10,8 +10,8 @@
 
 <script lang="ts">
   import Collapsible from "$lib/Collapsible.svelte";
-  import SingleNote from "$lib/singleview/notes/Note.svelte";
-  import type { Note } from "$lib/singleview/docmodel/docmodeltypes";
+  import SingleNote from "$lib/CSAFWebview/notes/Note.svelte";
+  import type { Note } from "$lib/CSAFWebview/docmodel/docmodeltypes";
   export let notes: Note[];
 </script>
 

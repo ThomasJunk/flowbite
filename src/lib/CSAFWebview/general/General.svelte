@@ -9,11 +9,11 @@
 -->
 <script lang="ts">
   import { appStore } from "$lib/store";
-  import { Status, TLP } from "$lib/singleview/docmodel/docmodeltypes";
-  import Acknowledgments from "$lib/singleview/acknowledgments/Acknowledgments.svelte";
+  import { Status, TLP } from "$lib/CSAFWebview/docmodel/docmodeltypes";
+  import Acknowledgments from "$lib/CSAFWebview/acknowledgments/Acknowledgments.svelte";
   import Collapsible from "$lib/Collapsible.svelte";
-  import Notes from "$lib/singleview/notes/Notes.svelte";
-  import References from "$lib/singleview/references/References.svelte";
+  import Notes from "$lib/CSAFWebview/notes/Notes.svelte";
+  import References from "$lib/CSAFWebview/references/References.svelte";
   import RevisionHistory from "./RevisionHistory.svelte";
   import ValueList from "../../ValueList.svelte";
   let tlpStyle = "";

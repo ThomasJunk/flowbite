@@ -10,7 +10,7 @@
 
 <script lang="ts">
   import KeyValue from "../../KeyValue.svelte";
-  import type { Note } from "$lib/singleview/docmodel/docmodeltypes";
+  import type { Note } from "$lib/CSAFWebview/docmodel/docmodeltypes";
   import { marked } from "marked";
   import DOMPurify from "dompurify";
   marked.use({ gfm: true });
