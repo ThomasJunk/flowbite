@@ -15,7 +15,6 @@
   import ProductGroups from "./productgroup/ProductGroups.svelte";
   import ProductNames from "./product/ProductNames.svelte";
   import Relationships from "./relationship/Relationships.svelte";
-  import Webview from "../Webview.svelte";
 </script>
 
 {#if $appStore.webview.doc?.productTree.branches}

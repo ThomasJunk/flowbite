@@ -11,11 +11,11 @@
 <script lang="ts">
   import AcknowledgementComponent from "./Acknowledgment.svelte";
   import type { Acknowledgement } from "../docmodel/docmodeltypes";
-  export let acknowledgements: Acknowledgement[];
+  export let acknowledegments: Acknowledgement[];
 </script>
 
-{#if acknowledgements}
-  {#each acknowledgements as ack}
+{#if acknowledegments}
+  {#each acknowledegments as ack}
     <AcknowledgementComponent {ack} />
   {/each}
 {/if}
