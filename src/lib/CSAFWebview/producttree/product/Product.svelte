@@ -24,7 +24,7 @@
     await tick();
     document.getElementById(`${product?.product_id}`)?.scrollIntoView({ behavior: "smooth" });
   }
-  $: if ($appStore.ui.selectedProduct === product?.product_id) {
+  $: if ($appStore.webview.ui.selectedProduct === product?.product_id) {
     highlight = true;
     updateUI();
   } else {
@@ -36,9 +36,9 @@
   header={product.name}
   level="4"
   {highlight}
-  open={$appStore.ui.selectedProduct === product.product_id}
+  open={$appStore.webview.ui.selectedProduct === product.product_id}
   onClose={() => {
-    if ($appStore.ui.selectedProduct === product.product_id) {
+    if ($appStore.webview.ui.selectedProduct === product.product_id) {
       appStore.resetSelectedProduct();
     }
   }}
