@@ -45,6 +45,7 @@
 		"dompurify": "^3.0.8",
 		"flowbite": "^2.2.1",
 		"flowbite-svelte": "^0.44.22",
+		"flowbite-svelte-icons": "^1.0.3",
 		"marked": "^11.1.1",
 		"tailwind-merge": "^2.2.1"
 	}
