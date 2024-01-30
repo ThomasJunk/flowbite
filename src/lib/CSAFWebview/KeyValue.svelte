@@ -22,10 +22,12 @@
       {#if key == "text" || key == "Text"}
         <tr
           ><td>{key}</td><td>
-            <div class="display-markdown">
-              {@html DOMPurify.sanitize(
-                marked.parse(values[index].replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""))
-              )}
+            <div class="markdown-text">
+              <div class="display-markdown">
+                {@html DOMPurify.sanitize(
+                  marked.parse(values[index].replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""))
+                )}
+              </div>
             </div>
           </td>
         </tr>
@@ -37,6 +39,14 @@
 </table>
 
 <style>
+  .markdown-text {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border: 1px solid lightgray;
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+  }
   .display-markdown {
   }
 </style>

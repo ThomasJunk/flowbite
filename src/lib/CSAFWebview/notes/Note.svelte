@@ -42,6 +42,12 @@
 
 <style>
   .markdown-text {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border: 1px solid lightgray;
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
   }
   .display-markdown {
   }
