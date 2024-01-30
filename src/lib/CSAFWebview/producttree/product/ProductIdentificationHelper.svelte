@@ -10,8 +10,8 @@
 
 <script lang="ts">
   import FileHash from "./FileHash.svelte";
-  import KeyValue from "$lib/KeyValue.svelte";
-  import ValueList from "$lib/ValueList.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
+  import ValueList from "$lib/CSAFWebview/ValueList.svelte";
   import XGenericUri from "./XGenericURI.svelte";
   export let helper: any;
 </script>

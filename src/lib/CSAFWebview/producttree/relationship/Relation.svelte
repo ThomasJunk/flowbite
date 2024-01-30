@@ -11,8 +11,8 @@
 <script lang="ts">
   import { appStore } from "$lib/store";
   import { tick } from "svelte";
-  import Collapsible from "$lib/Collapsible.svelte";
-  import KeyValue from "$lib/KeyValue.svelte";
+  import Collapsible from "$lib/CSAFWebview/Collapsible.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
   import ProductIdentificationHelper from "../product/ProductIdentificationHelper.svelte";
   import type { Relationship } from "$lib/types";
   export let relation: Relationship;
@@ -31,7 +31,7 @@
       .getElementById(`${relation.full_product_name.product_id}`)
       ?.scrollIntoView({ behavior: "smooth" });
   }
-  $: if ($appStore.ui.selectedProduct === relation.full_product_name.product_id) {
+  $: if ($appStore.webview.ui.selectedProduct === relation.full_product_name.product_id) {
     highlight = true;
     updateUI();
   } else {

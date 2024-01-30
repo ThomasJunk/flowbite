@@ -11,8 +11,8 @@
 <script lang="ts">
   import { appStore } from "$lib/store";
   import { tick } from "svelte";
-  import Collapsible from "$lib/Collapsible.svelte";
-  import KeyValue from "$lib/KeyValue.svelte";
+  import Collapsible from "$lib/CSAFWebview/Collapsible.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
   import ProductIdentificationHelper from "./ProductIdentificationHelper.svelte";
   import type { FullProductName } from "$lib/types";
   export let product: FullProductName;

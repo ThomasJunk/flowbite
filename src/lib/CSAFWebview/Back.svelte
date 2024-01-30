@@ -26,7 +26,7 @@
    * @param e
    */
   const backPressed = (e: Event) => {
-    const lastElement = $appStore.ui.history[0];
+    const lastElement = $appStore.webview.ui.history[0];
     appStore.shiftHistory();
     updateUI(lastElement);
     e.preventDefault();

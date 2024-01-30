@@ -9,7 +9,7 @@
 -->
 
 <script lang="ts">
-  import KeyValue from "$lib/KeyValue.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
   import type { Reference } from "$lib/types";
   export let reference: Reference;
   let keys: string[] = [];

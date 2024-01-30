@@ -10,7 +10,7 @@
 <script lang="ts">
   import { appStore } from "$lib/store";
   import Vulnerability from "./vulnerability/Vulnerability.svelte";
-  $: vulnerabilities = $appStore.doc?.vulnerabilities;
+  $: vulnerabilities = $appStore.webview.doc?.vulnerabilities;
 </script>
 
 <div>

@@ -9,7 +9,7 @@
 -->
 
 <script lang="ts">
-  import KeyValue from "$lib/KeyValue.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
   import type { xGenericURI } from "./producttypes";
 
   export let x_generic_uris: xGenericURI[];

@@ -10,8 +10,8 @@
 
 <script lang="ts">
   import type { ProductGroup } from "$lib/types";
-  import ValueField from "$lib/ValueField.svelte";
-  import ValueList from "$lib/ValueList.svelte";
+  import ValueField from "$lib/CSAFWebview/ValueField.svelte";
+  import ValueList from "$lib/CSAFWebview/ValueList.svelte";
   export let productGroup: ProductGroup;
 </script>
 

@@ -13,8 +13,8 @@
   import { ProductStatusSymbol } from "./productvulnerabilitiestypes";
   let headerColumns: string[] = [];
   let productLines: string[][];
-  $: if ($appStore.doc) {
-    const vulnerabilities = [...$appStore.doc.productVulnerabilities];
+  $: if ($appStore.webview.doc) {
+    const vulnerabilities = [...$appStore.webview.doc.productVulnerabilities];
     // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
     headerColumns = vulnerabilities.shift()!;
     productLines = vulnerabilities;
@@ -73,7 +73,7 @@
                   {#if index < 1}
                     <td class="productname"
                       ><a id={crypto.randomUUID()} on:click={openProduct} href={column}
-                        >{$appStore.doc.productsByID[column]} ({column})</a
+                        >{$appStore.webview.doc.productsByID[column]} ({column})</a
                       ></td
                     >
                   {:else if column === "N.A"}

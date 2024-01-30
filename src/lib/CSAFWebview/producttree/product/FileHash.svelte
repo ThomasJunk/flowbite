@@ -9,7 +9,7 @@
 -->
 
 <script lang="ts">
-  import KeyValue from "$lib/KeyValue.svelte";
+  import KeyValue from "$lib/CSAFWebview/KeyValue.svelte";
   import type { hashEntry } from "./producttypes";
 
   export let hash: hashEntry[];
