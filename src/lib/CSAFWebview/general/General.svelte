@@ -58,118 +58,118 @@
   }
 </script>
 
-<div class="documentdata">
+<div>
   <table>
     <tr>
-      <td class="key">ID</td>
-      <td class="value">{id}</td>
+      <td>ID</td>
+      <td>{id}</td>
     </tr>
     <tr>
-      <td class="key">CSAF-Version</td>
-      <td class="value">{csafVersion}</td>
+      <td>CSAF-Version</td>
+      <td>{csafVersion}</td>
     </tr>
     {#if $appStore.webview.doc?.aggregateSeverity}
       <tr>
-        <td class="key">Aggregate severity text</td>
-        <td class="value"><span>{$appStore.webview.doc?.aggregateSeverity.text}</span></td>
+        <td>Aggregate severity text</td>
+        <td><span>{$appStore.webview.doc?.aggregateSeverity.text}</span></td>
       </tr>
       {#if $appStore.webview.doc?.aggregateSeverity.namespace}
         <tr>
-          <td class="key">Aggregate severity namespace</td>
-          <td class="value"><span>{$appStore.webview.doc?.aggregateSeverity.namespace}</span></td>
+          <td>Aggregate severity namespace</td>
+          <td><span>{$appStore.webview.doc?.aggregateSeverity.namespace}</span></td>
         </tr>
       {/if}
     {/if}
     {#if tlp?.label}
       <tr>
-        <td class="key">TLP</td>
-        <td class="value"><span class={tlpStyle}>{tlp?.label}</span></td>
+        <td>TLP</td>
+        <td><span class={tlpStyle}>{tlp?.label}</span></td>
       </tr>
     {/if}
     {#if tlp?.url}
       <tr>
-        <td class="key">TLP URL</td>
-        <td class="value"><a href={tlpurl}>{tlp?.url}</a></td>
+        <td>TLP URL</td>
+        <td><a href={tlpurl}>{tlp?.url}</a></td>
       </tr>
     {/if}
     <tr>
-      <td class="key">Category</td>
-      <td class="value">{category}</td>
+      <td>Category</td>
+      <td>{category}</td>
     </tr>
     <tr>
-      <td class="key">Title</td>
-      <td class="value">{title}</td>
+      <td>Title</td>
+      <td>{title}</td>
     </tr>
     <tr>
-      <td class="key">Publisher name</td>
-      <td class="value">{publisherName}</td>
+      <td>Publisher name</td>
+      <td>{publisherName}</td>
     </tr>
     <tr>
-      <td class="key">Publisher category</td>
-      <td class="value">{publisherCategory}</td>
+      <td>Publisher category</td>
+      <td>{publisherCategory}</td>
     </tr>
     <tr>
-      <td class="key">Publisher namespace</td>
-      <td class="value">{publisherNamespace}</td>
+      <td>Publisher namespace</td>
+      <td>{publisherNamespace}</td>
     </tr>
     {#if publisherIssuingAuthority}
       <tr>
-        <td class="key">Publisher issuing authority</td>
-        <td class="value">{publisherIssuingAuthority}</td>
+        <td>Publisher issuing authority</td>
+        <td>{publisherIssuingAuthority}</td>
       </tr>
     {/if}
     {#if publisherContactDetails}
       <tr>
-        <td class="key">Publisher contact details</td>
-        <td class="value">{publisherContactDetails}</td>
+        <td>Publisher contact details</td>
+        <td>{publisherContactDetails}</td>
       </tr>
     {/if}
     {#if lang}
       <tr>
-        <td class="key">Language</td>
-        <td class="value">{lang}</td>
+        <td>Language</td>
+        <td>{lang}</td>
       </tr>
     {/if}
     {#if sourceLang}
       <tr>
-        <td class="key">Source lang</td>
-        <td class="value">{sourceLang}</td>
+        <td>Source lang</td>
+        <td>{sourceLang}</td>
       </tr>
     {/if}
     <tr>
-      <td class="key">Published</td>
-      <td class="value">{published}</td>
+      <td>Published</td>
+      <td>{published}</td>
     </tr>
     <tr>
-      <td class="key">Last update</td>
-      <td class="value">{lastUpdate}</td>
+      <td>Last update</td>
+      <td>{lastUpdate}</td>
     </tr>
     <tr>
-      <td class="key">Tracking Version</td>
-      <td class="value">{trackingVersion}</td>
+      <td>Tracking Version</td>
+      <td>{trackingVersion}</td>
     </tr>
     {#if $appStore.webview.doc?.status !== Status.final}
       <tr>
-        <td class="key">Status</td>
-        <td class="value">{status}</td>
+        <td>Status</td>
+        <td>{status}</td>
       </tr>
     {/if}
     {#if generator}
       <tr>
-        <td class="key">Generator engine</td>
-        <td class="value"><span>{$appStore.webview.doc?.generator?.engine.name}</span></td>
+        <td>Generator engine</td>
+        <td><span>{$appStore.webview.doc?.generator?.engine.name}</span></td>
       </tr>
     {/if}
     {#if generator?.engine?.version}
       <tr>
-        <td class="key">Generator engine version</td>
-        <td class="value"><span>{$appStore.webview.doc?.generator?.engine.version}</span></td>
+        <td>Generator engine version</td>
+        <td><span>{$appStore.webview.doc?.generator?.engine.version}</span></td>
       </tr>
     {/if}
     {#if generator?.date}
       <tr>
-        <td class="key">Generator date</td>
-        <td class="value"><span>{generator?.date}</span></td>
+        <td>Generator date</td>
+        <td><span>{generator?.date}</span></td>
       </tr>
     {/if}
   </table>
@@ -180,7 +180,7 @@
 {/if}
 
 {#if $appStore.webview.doc?.isRevisionHistoryPresent}
-  <div class="subsection">
+  <div>
     <Collapsible
       header="Revision history"
       level="3"
@@ -192,7 +192,7 @@
 {/if}
 
 {#if $appStore.webview.doc?.notes}
-  <div class="subsection">
+  <div>
     <Collapsible header="Notes" level="3">
       <Notes notes={$appStore.webview.doc?.notes} />
     </Collapsible>
@@ -200,7 +200,7 @@
 {/if}
 
 {#if $appStore.webview.doc?.acknowledgements}
-  <div class="subsection">
+  <div>
     <Collapsible header="Acknowledgements" level="3">
       <Acknowledgments acknowledgements={$appStore.webview.doc?.acknowledgements} />
     </Collapsible>
@@ -208,7 +208,7 @@
 {/if}
 
 {#if $appStore.webview.doc && $appStore.webview.doc.references.length > 0}
-  <div class="subsection">
+  <div>
     <Collapsible header="References" level="3">
       <References references={$appStore.webview.doc?.references} />
     </Collapsible>

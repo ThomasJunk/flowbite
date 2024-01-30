@@ -16,13 +16,13 @@
   export let helper: any;
 </script>
 
-<div class="helperinfo">
+<div>
   <table>
     <tr>
       <td><h5>Product Version Helper</h5></td>
     </tr>
   </table>
-  <div class="helperinfobody">
+  <div>
     {#if helper.cpe}
       <KeyValue keys={["cpe"]} values={helper.cpe} />
     {/if}

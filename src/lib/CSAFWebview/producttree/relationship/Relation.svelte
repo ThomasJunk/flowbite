@@ -42,15 +42,15 @@
 <Collapsible
   header={`${relation.full_product_name.product_id}`}
   level="4"
-  open={relation.full_product_name.product_id === $appStore.ui.selectedProduct}
+  open={relation.full_product_name.product_id === $appStore.webview.ui.selectedProduct}
   {highlight}
   onClose={() => {
-    if ($appStore.ui.selectedProduct === relation.full_product_name.product_id) {
+    if ($appStore.webview.ui.selectedProduct === relation.full_product_name.product_id) {
       appStore.resetSelectedProduct();
     }
   }}
 >
-  <div id={relation.full_product_name.product_id} class="relation">
+  <div id={relation.full_product_name.product_id}>
     <KeyValue
       keys={["Category", "Name", "Product ID"]}
       values={[
@@ -67,7 +67,7 @@
     <table>
       <tbody>
         <tr>
-          <td class="key">Product reference</td>
+          <td>Product reference</td>
           <td
             ><a id={crypto.randomUUID()} on:click={openProduct} href={relation.product_reference}
               >{relation.product_reference}</a
@@ -75,7 +75,7 @@
           >
         </tr>
         <tr>
-          <td class="key">Relates to</td>
+          <td>Relates to</td>
           <td
             ><a
               id={crypto.randomUUID()}
@@ -89,12 +89,3 @@
     </table>
   </div>
 </Collapsible>
-
-<style>
-  .key {
-    width: 21rem;
-  }
-  .relation {
-    margin-top: 2rem;
-  }
-</style>

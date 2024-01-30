@@ -28,7 +28,7 @@
 </script>
 
 <KeyValue {keys} {values} />
-<div class="category-name">
+<div>
   <h5>Text</h5>
 </div>
 
@@ -39,3 +39,10 @@
     )}
   </div>
 </div>
+
+<style>
+  .markdown-text {
+  }
+  .display-markdown {
+  }
+</style>

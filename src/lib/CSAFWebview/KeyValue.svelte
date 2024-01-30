@@ -16,12 +16,12 @@
   marked.use({ gfm: true });
 </script>
 
-<table class="keyvalue">
+<table>
   <tbody>
     {#each keys as key, index}
       {#if key == "text" || key == "Text"}
         <tr
-          ><td class="key">{key}</td><td class="value">
+          ><td>{key}</td><td>
             <div class="display-markdown">
               {@html DOMPurify.sanitize(
                 marked.parse(values[index].replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""))
@@ -30,8 +30,13 @@
           </td>
         </tr>
       {:else}
-        <tr><td class="key">{key}</td><td class="value">{values[index]}</td></tr>
+        <tr><td>{key}</td><td>{values[index]}</td></tr>
       {/if}
     {/each}
   </tbody>
 </table>
+
+<style>
+  .display-markdown {
+  }
+</style>

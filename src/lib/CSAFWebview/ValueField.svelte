@@ -13,7 +13,7 @@
   export let label = "";
 </script>
 
-<div class="">
+<div>
   <h6>{label}</h6>
   <p>{value}</p>
 </div>

@@ -16,7 +16,7 @@
 </script>
 
 <p>X Generic URIs</p>
-<div class="xgeneric">
+<div>
   {#each x_generic_uris as uri}
     <KeyValue keys={["Namespace", "URI"]} values={[uri.namespace, uri.uri]} />
   {/each}

@@ -10,6 +10,7 @@
 
 <script lang="ts">
   import { appStore } from "$lib/store";
+  import { UndoOutline } from "flowbite-svelte-icons";
   /**
    * updateUI waits until UI is settled and goes back to the last anchor.
    * @param id
@@ -33,6 +34,6 @@
   };
 </script>
 
-{#if $appStore.ui.history.length > 0}
-  <a class="backbutton" href="#top" on:click={backPressed}>Last pos. <i class="bx bx-undo" /></a>
+{#if $appStore.webview.ui.history.length > 0}
+  <a href="#top" on:click={backPressed}>Last pos. <UndoOutline /></a>
 {/if}

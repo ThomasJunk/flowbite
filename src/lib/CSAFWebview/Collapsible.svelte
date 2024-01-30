@@ -14,7 +14,6 @@
   export let header: string;
   export let open = false;
   export let level = "2";
-  export let class_ = "";
   export let highlight = false;
   const uuid = crypto.randomUUID();
   export let onOpen = () => {
@@ -57,7 +56,7 @@
 <div class:highlight-section={highlight}>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div style="display:flex" title={header} id={header} on:click={toggle} class={class_}>
+  <div style="display:flex" title={header} id={header} on:click={toggle}>
     {#if visibility === "block"}
       <ChevronDownSolid size="lg" />
     {:else}
@@ -68,7 +67,7 @@
     >
   </div>
   {#if visibility === "block"}
-    <div id={uuid} class="collapsible-body">
+    <div id={uuid}>
       <slot />
     </div>
   {/if}

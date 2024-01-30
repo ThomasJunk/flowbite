@@ -46,22 +46,20 @@
   };
 </script>
 
-<div class="crosstable-overview">
+<div>
   {#if productLines.length > 0}
-    <div class="crosstable-container">
-      <div class="crosstable">
+    <div>
+      <div>
         <table>
           <thead>
-            <tr class="crosstable-header-row">
+            <tr>
               {#each headerColumns as column, index}
                 {#if index == 0}
-                  <th class="productname">{column}</th>
+                  <th>{column}</th>
                 {:else if index == 1}
-                  <th class="total">{column}</th>
+                  <th>{column}</th>
                 {:else}
-                  <th class="cve"
-                    ><a id={crypto.randomUUID()} on:click={openCVE} href={column}>{column}</a></th
-                  >
+                  <th><a id={crypto.randomUUID()} on:click={openCVE} href={column}>{column}</a></th>
                 {/if}
               {/each}
             </tr>
@@ -71,15 +69,15 @@
               <tr>
                 {#each line as column, index}
                   {#if index < 1}
-                    <td class="productname"
+                    <td
                       ><a id={crypto.randomUUID()} on:click={openProduct} href={column}
                         >{$appStore.webview.doc.productsByID[column]} ({column})</a
                       ></td
                     >
                   {:else if column === "N.A"}
-                    <td class="affectionstate">{column}</td>
+                    <td>{column}</td>
                   {:else}
-                    <td class="affectionstate">
+                    <td>
                       {#if column === ProductStatusSymbol.NOT_AFFECTED + ProductStatusSymbol.RECOMMENDED}
                         <i class="bx bx-heart" />
                         <i class="bx b-minus" />

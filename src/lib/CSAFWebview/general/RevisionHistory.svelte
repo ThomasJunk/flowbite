@@ -13,14 +13,14 @@
 </script>
 
 {#if $appStore.webview.doc?.isRevisionHistoryPresent}
-  <div class="revisionhistory">
-    <table class="striped">
+  <div>
+    <table>
       <thead>
         <tr
-          ><th class="history-date">Date</th>
-          <th class="history-number">Number</th>
-          <th class="history-summary">Summary</th>
-          <th class="hisotry-legacyversion">Legacy_version</th>
+          ><th>Date</th>
+          <th>Number</th>
+          <th>Summary</th>
+          <th>Legacy_version</th>
         </tr>
       </thead>
       <tbody>

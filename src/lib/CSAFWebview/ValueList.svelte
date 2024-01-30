@@ -14,7 +14,7 @@
 </script>
 
 <p>{label}</p>
-<ul class="valuelist">
+<ul>
   {#each values as value}
     <li>{value}</li>
   {/each}

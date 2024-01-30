@@ -16,8 +16,8 @@
   export let branch: Branch;
 </script>
 
-<div class="branch">
-  <span class="tag is-small">{branch.category}</span>
+<div>
+  <span>{branch.category}</span>
   {branch.name}
   {#if branch.branches}
     {#each branch.branches as b}
